@@ -17,5 +17,9 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var date: UILabel!
 
     
+    @IBOutlet weak var photoMenu: UIButton!
+    
+    @IBAction func photoMenuAction(_ sender: UIButton) {
+    }
     
 }

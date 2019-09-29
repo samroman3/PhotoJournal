@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZDM-hO-0Kb">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="786"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wtG-dI-mYj">
@@ -39,7 +39,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b10-Hb-SNM">
-                                                    <rect key="frame" x="8" y="283" width="286" height="20"/>
+                                                    <rect key="frame" x="8" y="283" width="270" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="20"/>
                                                     <color key="textColor" red="0.99946194889999995" green="0.99696093799999996" blue="0.94509106870000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -51,8 +51,12 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                                     <state key="normal" title="...">
                                                         <color key="titleColor" red="0.99946194889999995" green="0.99696093799999996" blue="0.94509106870000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="titleShadowColor" red="1" green="0.99487199250000002" blue="0.94895281440000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17" scale="large"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="photoMenuAction:" destination="1UP-qf-AVh" eventType="touchUpInside" id="Ie8-Vu-I0Q"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="06-13-1995" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyh-9q-LGs">
                                                     <rect key="frame" x="8" y="362" width="73" height="16"/>
@@ -70,21 +74,47 @@
                                             <outlet property="date" destination="Zyh-9q-LGs" id="vzE-gS-lsI"/>
                                             <outlet property="name" destination="b10-Hb-SNM" id="UaS-ET-tsZ"/>
                                             <outlet property="photoImag" destination="Cw4-nd-Vk5" id="6RP-0Z-oO9"/>
+                                            <outlet property="photoMenu" destination="zhC-JG-WPF" id="7kK-Pt-n4n"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xr7-Fc-XCj">
+                                <rect key="frame" x="195" y="838" width="25" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.99946194889999995" green="0.99696093799999996" blue="0.94509106870000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="uoO-4f-cAp" kind="presentation" id="830-fR-mq8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="addPhotoButton" destination="Xr7-Fc-XCj" id="Tnc-CT-vuc"/>
                         <outlet property="photoCollection" destination="ZDM-hO-0Kb" id="5HH-Mp-rPV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="98m-sj-ZRN">
+            <objects>
+                <viewController id="uoO-4f-cAp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qVK-5i-hxe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="C9h-Wl-049"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7oH-7n-HTZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="833" y="115"/>
         </scene>
     </scenes>
 </document>

@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var photoCollection: UICollectionView!
     
+    @IBOutlet weak var addPhotoButton: UIButton!
+    
+    
     override func viewDidLoad() {
         photoCollection.delegate = self
         photoCollection.dataSource = self
