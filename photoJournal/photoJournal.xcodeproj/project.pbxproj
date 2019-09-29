@@ -15,6 +15,7 @@
 		3A40091A2341191E0079BD63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4009182341191E0079BD63 /* LaunchScreen.storyboard */; };
 		3A4009252341191E0079BD63 /* photoJournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4009242341191E0079BD63 /* photoJournalTests.swift */; };
 		3A4009302341191F0079BD63 /* photoJournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40092F2341191F0079BD63 /* photoJournalUITests.swift */; };
+		3A40093E23411B530079BD63 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40093D23411B530079BD63 /* PhotoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3A40092B2341191F0079BD63 /* photoJournalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = photoJournalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A40092F2341191F0079BD63 /* photoJournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoJournalUITests.swift; sourceTree = "<group>"; };
 		3A4009312341191F0079BD63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A40093D23411B530079BD63 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				3A40090F2341191C0079BD63 /* SceneDelegate.swift */,
 				3A4009112341191C0079BD63 /* ViewController.swift */,
 				3A4009132341191C0079BD63 /* Main.storyboard */,
+				3A40093D23411B530079BD63 /* PhotoCollectionViewCell.swift */,
 				3A4009162341191E0079BD63 /* Assets.xcassets */,
 				3A4009182341191E0079BD63 /* LaunchScreen.storyboard */,
 				3A40091B2341191E0079BD63 /* Info.plist */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A4009122341191C0079BD63 /* ViewController.swift in Sources */,
+				3A40093E23411B530079BD63 /* PhotoCollectionViewCell.swift in Sources */,
 				3A40090E2341191C0079BD63 /* AppDelegate.swift in Sources */,
 				3A4009102341191C0079BD63 /* SceneDelegate.swift in Sources */,
 			);
