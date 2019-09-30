@@ -14,6 +14,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var addPhotoButton: UIButton!
     
+    var pictures = [Picture]() {
+        didSet {
+            photoCollection.reloadData()
+    }
+    }
     
     override func viewDidLoad() {
         photoCollection.delegate = self
@@ -30,7 +35,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
