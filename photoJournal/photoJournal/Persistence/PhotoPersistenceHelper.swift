@@ -11,15 +11,16 @@ import Foundation
 struct PhotoPersistenceHelper {
     static let manager = PhotoPersistenceHelper()
 
-    func save(newPhoto: FavPhotos) throws {
+    func save(newPhoto: Picture) throws {
         try persistenceHelper.save(newElement: newPhoto)
     }
 
-    func getPhoto() throws -> [FavPhotos] {
+    func getPhoto() throws -> [Picture] {
         return try persistenceHelper.getObjects()
     }
 
-    private let persistenceHelper = PersistenceHelper<FavPhotos>(fileName: "favorites.plist")
+    
+    private let persistenceHelper = PersistenceHelper<Picture>(fileName: "journal.plist")
 
     private init() {}
 }

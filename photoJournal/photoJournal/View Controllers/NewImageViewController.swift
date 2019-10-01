@@ -10,13 +10,12 @@ import UIKit
 
 class NewImageViewController: UIViewController {
 
+    //MARK: Outlets, Actions & Variables
+    
     @IBOutlet weak var newImage: UIImageView!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var saveOutlet: UIButton!
     
-    
-    
-
     @IBAction func cancelAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
                   
@@ -27,20 +26,23 @@ class NewImageViewController: UIViewController {
     }
   
     @IBAction func saveAction(_ sender: UIButton) {
-        if let imageData = newImage.image?.jpegData(compressionQuality: 0.5) {
-            let picture = Picture(createdAt: nil, image: imageData, name: name)
-                PhotoJournalModel.addPhotos(photo: photoJournal)
-            }
-            dismiss(animated: true, completion: nil)
+        guard let image = newImage.image else { return }
+        let data = image.pngData()
+            let picture = Picture(createdAt: nil, image: data, name: name ?? "")
+            do {
+                try PhotoPersistenceHelper.manager.save(newPhoto: picture)
+            } catch {
+                return
         }
+        dismiss(animated: true, completion: nil)
     }
     
     
-    var name: String?{
-        didSet{
-            saveOutlet.isEnabled = true
-        }
-    }
+    
+    var name: String?
+    
+    
+    //MARK: Private Methods and Lifecycle
     
     private var imagePickerViewcontroller: UIImagePickerController!
     
@@ -48,9 +50,9 @@ class NewImageViewController: UIViewController {
     private func setupImagePickerViewController() {
             imagePickerViewcontroller = UIImagePickerController()
             imagePickerViewcontroller.delegate = self
-//            if !UIImagePickerController.isSourceTypeAvailable(.camera) {
-//
-//            }
+            if !UIImagePickerController.isSourceTypeAvailable(.camera) {
+
+            }
     }
     
     override func viewDidLoad() {
@@ -60,6 +62,8 @@ class NewImageViewController: UIViewController {
     }
 
 }
+
+//MARK: ImagePicker Extension
 
 extension NewImageViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -73,17 +77,14 @@ extension NewImageViewController: UIImagePickerControllerDelegate, UINavigationC
         } else {
             print("original image is nil")
         }
+        saveOutlet.isEnabled = true
         dismiss(animated: true, completion: nil)
     }
 }
 
+//MARK: Textfield Methods
+
 extension NewImageViewController: UITextFieldDelegate {
-    
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        guard textField.text == nil else { return false }
-        saveOutlet.isEnabled = false
-        return true
-    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             guard textField.text != nil else { return false }

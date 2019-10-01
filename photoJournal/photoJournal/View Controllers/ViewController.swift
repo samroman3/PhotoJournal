@@ -20,12 +20,37 @@ class ViewController: UIViewController {
     }
     }
     
+    
+    func loadData(){
+            do {
+               pictures = try PhotoPersistenceHelper.manager.getPhoto()
+            } catch {
+                print(error)
+            }
+        }
+
+    
+       
+    
     override func viewDidLoad() {
         photoCollection.delegate = self
         photoCollection.dataSource = self
+        loadData()
         super.viewDidLoad()
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadData()
+
+    }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        loadData()
+//        photoCollection.reloadData()
+//    }
 
 
 }
@@ -44,6 +69,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         cell.layer.cornerRadius = 20
         cell.layer.masksToBounds = true
         cell.name.text = index.name
+        cell.photoImag.image = UIImage(data: index.image!)
         
         return cell
     }
