@@ -38,7 +38,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="412" height="320"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b10-Hb-SNM">
                                                     <rect key="frame" x="8" y="342" width="270" height="20"/>
@@ -61,6 +61,9 @@
                                                     <state key="normal" title="...">
                                                         <color key="titleColor" red="0.81404663710000003" green="0.61518852130000001" blue="0.3962403853" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="photoMenuAction:" destination="1UP-qf-AVh" eventType="touchUpInside" id="KCK-7A-ekj"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.99599152803421021" green="0.99613410234451294" blue="0.9959602952003479" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -71,6 +74,7 @@
                                             <outlet property="date" destination="Zyh-9q-LGs" id="vzE-gS-lsI"/>
                                             <outlet property="name" destination="b10-Hb-SNM" id="UaS-ET-tsZ"/>
                                             <outlet property="photoImag" destination="Cw4-nd-Vk5" id="6RP-0Z-oO9"/>
+                                            <outlet property="photoMenu" destination="4Us-sf-lia" id="fOx-WT-epR"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

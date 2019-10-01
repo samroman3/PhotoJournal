@@ -7,15 +7,23 @@
 //
 
 import UIKit
+import Photos
 
 class NewImageViewController: UIViewController {
 
-    //MARK: Outlets, Actions & Variables
+    //MARK: Outlets & Variables
+    
+    private var name: String?
+      
+    private var imagePickerViewcontroller: UIImagePickerController!
     
     @IBOutlet weak var newImage: UIImageView!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var saveOutlet: UIButton!
     @IBOutlet weak var cameraOutlet: UIButton!
+    
+    
+    //MARK: Button Actions
     
     @IBAction func cancelAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -40,22 +48,13 @@ class NewImageViewController: UIViewController {
                 DispatchQueue.global(qos: .utility).async {
                 try? PhotoPersistenceHelper.manager.save(newPhoto: picture)
                   DispatchQueue.main.async {
-                      self.navigationController?.popViewController(animated: true)
+                    self.dismiss(animated: true, completion: nil)
                   }
             }
-        
-        dismiss(animated: true, completion: nil)
     }
     }
-    
-    private var name: String?
-    
-    private var imagePickerViewcontroller: UIImagePickerController!
     
     //MARK: Private Methods and Lifecycle
-    
-    
-    
     
     private func setupImagePickerViewController() {
             imagePickerViewcontroller = UIImagePickerController()
@@ -73,14 +72,15 @@ class NewImageViewController: UIViewController {
 
 }
 
-//MARK: ImagePicker Extension
+
+    //MARK: ImagePicker Extension
 
 extension NewImageViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
     
-    // Info dictionary of key and value(Image)
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             newImage.image = image
@@ -92,7 +92,8 @@ extension NewImageViewController: UIImagePickerControllerDelegate, UINavigationC
     }
 }
 
-//MARK: Textfield Methods
+
+//MARK: TextFieldDelegate Extension
 
 extension NewImageViewController: UITextFieldDelegate {
     

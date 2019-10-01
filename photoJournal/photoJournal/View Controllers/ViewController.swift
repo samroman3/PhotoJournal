@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    //MARK: Outlets & Variables
 
     @IBOutlet weak var photoCollection: UICollectionView!
     
@@ -21,7 +23,10 @@ class ViewController: UIViewController {
     }
     
     
-    func loadData(){
+    
+    //MARK: Private Methods & Lifecycle
+    
+    private func loadData(){
             do {
                pictures = try PhotoPersistenceHelper.manager.getPhoto()
             } catch {
@@ -29,9 +34,6 @@ class ViewController: UIViewController {
             }
         }
 
-    
-       
-    
     override func viewDidLoad() {
         photoCollection.delegate = self
         photoCollection.dataSource = self
@@ -55,6 +57,9 @@ class ViewController: UIViewController {
 
 }
 
+
+
+    //MARK: CollectionView Extension
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
