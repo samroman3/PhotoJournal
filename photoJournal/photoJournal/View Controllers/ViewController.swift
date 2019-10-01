@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import Photos
 
 class ViewController: UIViewController {
     
     //MARK: Outlets & Variables
+    
+    var photoLibraryAccess = false
 
     @IBOutlet weak var photoCollection: UICollectionView!
     
     @IBOutlet weak var addPhotoButton: UIButton!
     
+    @IBAction func addPhotoAction(_ sender: UIButton) {
+        
+    }
     var pictures = [Picture]() {
         didSet {
             photoCollection.reloadData()
@@ -24,7 +30,39 @@ class ViewController: UIViewController {
     
     
     
+    
     //MARK: Private Methods & Lifecycle
+    
+    private func checkPhotoLibraryAccess() {
+        let status = PHPhotoLibrary.authorizationStatus()
+        
+        switch status {
+        case .authorized:
+            print(status)
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization({status in
+                switch status {
+                case .authorized:
+                    self.photoLibraryAccess = true
+                    print(status)
+                case .denied:
+                    self.photoLibraryAccess = false
+                    print("denied")
+                case .notDetermined:
+                    print("not determined")
+                case .restricted:
+                    print("restricted")
+                }
+            })
+            
+        case .denied:
+            let alertVC = UIAlertController(title: "Denied", message: "Camera access is required to use this app. Please change your preference in the Settings app", preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction (title: "Ok", style: .default, handler: nil))
+            self.present(alertVC, animated: true, completion: nil)
+        case .restricted:
+            print("restricted")
+        }
+    }
     
     private func loadData(){
             do {
@@ -38,6 +76,7 @@ class ViewController: UIViewController {
         photoCollection.delegate = self
         photoCollection.dataSource = self
         loadData()
+        checkPhotoLibraryAccess()
         super.viewDidLoad()
 
     }

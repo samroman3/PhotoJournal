@@ -14,7 +14,5 @@ struct Picture: Codable {
     let image: Data?
     let name: String
     
-    
-    
-    }
+}
 

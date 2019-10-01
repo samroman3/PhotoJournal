@@ -85,6 +85,7 @@
                                 <color key="tintColor" red="0.99946194889999995" green="0.99696093799999996" blue="0.94509106870000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" backgroundImage="square.and.pencil" catalog="system"/>
                                 <connections>
+                                    <action selector="addPhotoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4hd-Dp-zKB"/>
                                     <segue destination="uoO-4f-cAp" kind="show" identifier="segue" id="g3f-ar-8hM"/>
                                 </connections>
                             </button>

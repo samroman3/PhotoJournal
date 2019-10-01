@@ -14,6 +14,8 @@ class NewImageViewController: UIViewController {
     //MARK: Outlets & Variables
     
     private var name: String?
+    
+    var photoLibraryAccess = false
       
     private var imagePickerViewcontroller: UIImagePickerController!
     
@@ -84,6 +86,7 @@ extension NewImageViewController: UIImagePickerControllerDelegate, UINavigationC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             newImage.image = image
+            self.cameraOutlet.isHidden = true
         } else {
             print("original image is nil")
         }
