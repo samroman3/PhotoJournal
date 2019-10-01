@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         photoCollection.delegate = self
         photoCollection.dataSource = self
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
     }
 
 
@@ -35,13 +35,16 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return pictures.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let index = pictures[indexPath.row]
         guard let cell = photoCollection.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
         cell.layer.cornerRadius = 20
         cell.layer.masksToBounds = true
+        cell.name.text = index.name
+        
         return cell
     }
     
@@ -54,3 +57,5 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     
 }
+
+
