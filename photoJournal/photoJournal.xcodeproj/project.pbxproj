@@ -17,11 +17,9 @@
 		3A4009302341191F0079BD63 /* photoJournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40092F2341191F0079BD63 /* photoJournalUITests.swift */; };
 		3A40093E23411B530079BD63 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40093D23411B530079BD63 /* PhotoCollectionViewCell.swift */; };
 		3A400940234239E70079BD63 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40093F234239E70079BD63 /* Picture.swift */; };
-		3AB16898234284C800D268B9 /* PhotoJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB16897234284C800D268B9 /* PhotoJournal.swift */; };
 		3AB168F82342E6F800D268B9 /* NewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB168F72342E6F800D268B9 /* NewImageViewController.swift */; };
 		3AB168FA234302EB00D268B9 /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB168F9234302EB00D268B9 /* PersistenceHelper.swift */; };
 		3AB168FC234302F000D268B9 /* PhotoPersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB168FB234302F000D268B9 /* PhotoPersistenceHelper.swift */; };
-		3AB1693D2343F80B00D268B9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1693C2343F80B00D268B9 /* Protocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,11 +56,9 @@
 		3A4009312341191F0079BD63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A40093D23411B530079BD63 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A40093F234239E70079BD63 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
-		3AB16897234284C800D268B9 /* PhotoJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoJournal.swift; sourceTree = "<group>"; };
 		3AB168F72342E6F800D268B9 /* NewImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewImageViewController.swift; sourceTree = "<group>"; };
 		3AB168F9234302EB00D268B9 /* PersistenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		3AB168FB234302F000D268B9 /* PhotoPersistenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPersistenceHelper.swift; sourceTree = "<group>"; };
-		3AB1693C2343F80B00D268B9 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,8 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				3A40093F234239E70079BD63 /* Picture.swift */,
-				3AB16897234284C800D268B9 /* PhotoJournal.swift */,
-				3AB1693C2343F80B00D268B9 /* Protocols.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -305,11 +299,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A4009122341191C0079BD63 /* ViewController.swift in Sources */,
-				3AB16898234284C800D268B9 /* PhotoJournal.swift in Sources */,
 				3A400940234239E70079BD63 /* Picture.swift in Sources */,
 				3AB168F82342E6F800D268B9 /* NewImageViewController.swift in Sources */,
 				3A40093E23411B530079BD63 /* PhotoCollectionViewCell.swift in Sources */,
-				3AB1693D2343F80B00D268B9 /* Protocols.swift in Sources */,
 				3A40090E2341191C0079BD63 /* AppDelegate.swift in Sources */,
 				3A4009102341191C0079BD63 /* SceneDelegate.swift in Sources */,
 				3AB168FA234302EB00D268B9 /* PersistenceHelper.swift in Sources */,

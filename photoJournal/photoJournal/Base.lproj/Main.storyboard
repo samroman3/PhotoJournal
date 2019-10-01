@@ -56,7 +56,7 @@
                                                         <color key="titleColor" red="0.81404663710000003" green="0.61518852130000001" blue="0.3962403853" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="photoMenuAction:" destination="1UP-qf-AVh" eventType="touchUpInside" id="KCK-7A-ekj"/>
+                                                        <action selector="menuButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hdm-w1-C3v"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b10-Hb-SNM">
@@ -75,7 +75,6 @@
                                             <outlet property="date" destination="Zyh-9q-LGs" id="vzE-gS-lsI"/>
                                             <outlet property="name" destination="b10-Hb-SNM" id="UaS-ET-tsZ"/>
                                             <outlet property="photoImag" destination="Cw4-nd-Vk5" id="6RP-0Z-oO9"/>
-                                            <outlet property="photoMenu" destination="4Us-sf-lia" id="fOx-WT-epR"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

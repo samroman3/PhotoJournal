@@ -9,6 +9,9 @@
 import Foundation
 
 struct PhotoPersistenceHelper {
+    
+    private static var pictures = [Picture]()
+    
     static let manager = PhotoPersistenceHelper()
 
     func save(newPhoto: Picture) throws {
@@ -18,6 +21,13 @@ struct PhotoPersistenceHelper {
     func getPhoto() throws -> [Picture] {
         return try persistenceHelper.getObjects()
     }
+    
+    static func delete(picArray: [Picture], index: Int) -> [Picture] {
+        var newArr = picArray
+        newArr.remove(at: index)
+        return newArr
+        
+}
 
     
     private let persistenceHelper = PersistenceHelper<Picture>(fileName: "journal.plist")

@@ -22,6 +22,22 @@ class ViewController: UIViewController {
     @IBAction func addPhotoAction(_ sender: UIButton) {
         
     }
+    
+    @IBAction func menuButton(_ sender: UIButton) {
+        let alert = UIAlertController(title: "options", message: "make a selection", preferredStyle: .actionSheet)
+        let delete = UIAlertAction(title: "delete", style: .destructive) { (action) in
+            let new = PhotoPersistenceHelper.delete(picArray: self.pictures, index: sender.tag)
+            self.pictures = new
+            self.photoCollection.reloadData()
+            
+        }
+       
+        let cancel = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
+        alert.addAction(delete)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+    }
+    
     var pictures = [Picture]() {
         didSet {
             photoCollection.reloadData()
