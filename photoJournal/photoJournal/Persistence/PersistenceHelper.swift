@@ -18,7 +18,12 @@ struct PersistenceHelper<T: Codable> {
     }
     
     
-
+    func deleteAtIndex(newArray: [T], index: Int) throws {
+        var elements = try getObjects()
+        elements.remove(at: index)
+        let serializedData = try PropertyListEncoder().encode(elements)
+        try serializedData.write(to: url, options: Data.WritingOptions.atomic)
+        }
     
     func save(newElement: T) throws {
         var elements = try getObjects()

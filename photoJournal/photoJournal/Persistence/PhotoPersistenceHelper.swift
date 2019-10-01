@@ -22,10 +22,8 @@ struct PhotoPersistenceHelper {
         return try persistenceHelper.getObjects()
     }
     
-    static func delete(picArray: [Picture], index: Int) -> [Picture] {
-        var newArr = picArray
-        newArr.remove(at: index)
-        return newArr
+    func delete(picArray: [Picture], index: Int) throws {
+        return try persistenceHelper.deleteAtIndex(newArray: picArray, index: index)
         
 }
 

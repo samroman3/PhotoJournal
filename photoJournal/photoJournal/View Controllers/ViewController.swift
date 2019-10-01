@@ -26,8 +26,7 @@ class ViewController: UIViewController {
     @IBAction func menuButton(_ sender: UIButton) {
         let alert = UIAlertController(title: "options", message: "make a selection", preferredStyle: .actionSheet)
         let delete = UIAlertAction(title: "delete", style: .destructive) { (action) in
-            let new = PhotoPersistenceHelper.delete(picArray: self.pictures, index: sender.tag)
-            self.pictures = new
+            self.deleteObject(arr: self.pictures, index: sender.tag)
             self.photoCollection.reloadData()
             
         }
@@ -87,6 +86,15 @@ class ViewController: UIViewController {
                 print(error)
             }
         }
+    
+    private func deleteObject(arr: [Picture], index: Int){
+        do {
+            try PhotoPersistenceHelper.manager.delete(picArray: arr, index: index)
+            loadData()
+        } catch {
+            print("unable to delete")
+        }
+    }
 
     override func viewDidLoad() {
         photoCollection.delegate = self
