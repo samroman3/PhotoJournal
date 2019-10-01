@@ -15,6 +15,7 @@ class NewImageViewController: UIViewController {
     @IBOutlet weak var newImage: UIImageView!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var saveOutlet: UIButton!
+    @IBOutlet weak var cameraOutlet: UIButton!
     
     @IBAction func cancelAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -24,34 +25,43 @@ class NewImageViewController: UIViewController {
         imagePickerViewcontroller.sourceType = .photoLibrary
         present(imagePickerViewcontroller, animated: true, completion: nil)
     }
-  
+    
+    
+    @IBAction func cameraButton(_ sender: UIButton) {
+        imagePickerViewcontroller.sourceType = .camera
+        present(imagePickerViewcontroller, animated: true)
+    }
+    
     @IBAction func saveAction(_ sender: UIButton) {
         guard let image = newImage.image else { return }
         let data = image.pngData()
             let picture = Picture(createdAt: nil, image: data, name: name ?? "")
             do {
-                try PhotoPersistenceHelper.manager.save(newPhoto: picture)
-            } catch {
-                return
-        }
+                DispatchQueue.global(qos: .utility).async {
+                try? PhotoPersistenceHelper.manager.save(newPhoto: picture)
+                  DispatchQueue.main.async {
+                      self.navigationController?.popViewController(animated: true)
+                  }
+            }
+        
         dismiss(animated: true, completion: nil)
     }
+    }
     
+    private var name: String?
     
-    
-    var name: String?
-    
+    private var imagePickerViewcontroller: UIImagePickerController!
     
     //MARK: Private Methods and Lifecycle
     
-    private var imagePickerViewcontroller: UIImagePickerController!
+    
     
     
     private func setupImagePickerViewController() {
             imagePickerViewcontroller = UIImagePickerController()
             imagePickerViewcontroller.delegate = self
             if !UIImagePickerController.isSourceTypeAvailable(.camera) {
-
+                cameraOutlet.isEnabled = false
             }
     }
     

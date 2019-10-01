@@ -158,6 +158,16 @@
                                 <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohw-ci-eJH">
+                                <rect key="frame" x="165" y="167.5" width="85" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <state key="normal" backgroundImage="camera" catalog="system"/>
+                                <connections>
+                                    <action selector="cameraButton:" destination="uoO-4f-cAp" eventType="touchUpInside" id="6DG-IA-I75"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -165,6 +175,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="obS-Hs-ZEH"/>
                     <connections>
+                        <outlet property="cameraOutlet" destination="Ohw-ci-eJH" id="bdZ-XF-Md9"/>
                         <outlet property="nameField" destination="V92-2T-FA4" id="SgB-cr-i7t"/>
                         <outlet property="newImage" destination="4Di-ZA-ubf" id="Rv3-tX-8HC"/>
                         <outlet property="saveOutlet" destination="E1X-AH-IzF" id="tjL-Wv-SuD"/>
@@ -177,6 +188,7 @@
     </scenes>
     <resources>
         <image name="arrow.left.circle" catalog="system" width="64" height="62"/>
+        <image name="camera" catalog="system" width="64" height="48"/>
         <image name="folder.badge.plus" catalog="system" width="64" height="44"/>
         <image name="square.and.arrow.down" catalog="system" width="58" height="64"/>
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
