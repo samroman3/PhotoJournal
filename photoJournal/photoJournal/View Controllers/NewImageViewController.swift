@@ -92,6 +92,7 @@ extension NewImageViewController: UIImagePickerControllerDelegate, UINavigationC
         }
         saveOutlet.isEnabled = true
         dismiss(animated: true, completion: nil)
+        
     }
 }
 

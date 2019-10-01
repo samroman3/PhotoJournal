@@ -87,7 +87,7 @@
                                 <state key="normal" backgroundImage="square.and.pencil" catalog="system"/>
                                 <connections>
                                     <action selector="addPhotoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4hd-Dp-zKB"/>
-                                    <segue destination="uoO-4f-cAp" kind="show" identifier="segue" id="g3f-ar-8hM"/>
+                                    <segue destination="uoO-4f-cAp" kind="presentation" identifier="segue" modalPresentationStyle="currentContext" id="g3f-ar-8hM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -108,7 +108,7 @@
             <objects>
                 <viewController id="uoO-4f-cAp" customClass="NewImageViewController" customModule="photoJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" alpha="0.94999999999999996" contentMode="scaleToFill" id="qVK-5i-hxe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Di-ZA-ubf">

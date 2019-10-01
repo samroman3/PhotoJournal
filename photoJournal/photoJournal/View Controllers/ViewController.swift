@@ -86,13 +86,6 @@ class ViewController: UIViewController {
         loadData()
 
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        loadData()
-//        photoCollection.reloadData()
-//    }
-
 
 }
 
@@ -118,6 +111,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         return cell
     }
     
+  
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -128,4 +123,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     
 }
 
+
+
+    
 
