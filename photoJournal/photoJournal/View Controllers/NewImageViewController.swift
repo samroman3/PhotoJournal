@@ -149,10 +149,9 @@ extension NewImageViewController: UITextFieldDelegate {
             return false
         }
             name = textField.text
-            
             return true
-        
     }
+    
    
 
 }
