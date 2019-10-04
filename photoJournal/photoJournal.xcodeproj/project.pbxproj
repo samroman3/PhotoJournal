@@ -21,6 +21,7 @@
 		3AB168FA234302EB00D268B9 /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB168F9234302EB00D268B9 /* PersistenceHelper.swift */; };
 		3AB168FC234302F000D268B9 /* PhotoPersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB168FB234302F000D268B9 /* PhotoPersistenceHelper.swift */; };
 		3AB169452347C35C00D268B9 /* PhotoProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB169442347C35C00D268B9 /* PhotoProtocols.swift */; };
+		3AB169472347E73300D268B9 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB169462347E73300D268B9 /* UserDefaultsWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		3AB168F9234302EB00D268B9 /* PersistenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		3AB168FB234302F000D268B9 /* PhotoPersistenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPersistenceHelper.swift; sourceTree = "<group>"; };
 		3AB169442347C35C00D268B9 /* PhotoProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoProtocols.swift; sourceTree = "<group>"; };
+		3AB169462347E73300D268B9 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				3AB168FE2343031100D268B9 /* Models */,
 				3AB168FD234302F700D268B9 /* Persistence */,
 				3A4009132341191C0079BD63 /* Main.storyboard */,
+				3AB169462347E73300D268B9 /* UserDefaultsWrapper.swift */,
 				3A4009162341191E0079BD63 /* Assets.xcassets */,
 				3A4009182341191E0079BD63 /* LaunchScreen.storyboard */,
 				3A40091B2341191E0079BD63 /* Info.plist */,
@@ -307,6 +310,7 @@
 				3A40093E23411B530079BD63 /* PhotoCollectionViewCell.swift in Sources */,
 				3A40090E2341191C0079BD63 /* AppDelegate.swift in Sources */,
 				3AB169452347C35C00D268B9 /* PhotoProtocols.swift in Sources */,
+				3AB169472347E73300D268B9 /* UserDefaultsWrapper.swift in Sources */,
 				3A4009102341191C0079BD63 /* SceneDelegate.swift in Sources */,
 				3AB168FA234302EB00D268B9 /* PersistenceHelper.swift in Sources */,
 				3AB168FC234302F000D268B9 /* PhotoPersistenceHelper.swift in Sources */,
