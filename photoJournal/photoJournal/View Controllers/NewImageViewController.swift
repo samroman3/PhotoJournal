@@ -56,6 +56,9 @@ class NewImageViewController: UIViewController {
     }
     }
     
+    //TODO: Create a switch function in saveAction to determine whether post is being created from scratch or editing an existing post
+    
+    
     //MARK: Private Methods and Lifecycle
     
     private func setupImagePickerViewController() {

@@ -23,6 +23,11 @@ struct PhotoPersistenceHelper {
     }
     
     
+    
+    func editPhoto(picArray: [Picture], element: Picture, index: Int) throws {
+        return try persistenceHelper.editAtIndex(array: picArray, editedElement: element, index: index)
+    }
+    
     //TODO: find way to delete picture based on sender tag in collectionview cell
     func delete(picArray: [Picture], index: Int) throws {
         return try persistenceHelper.deleteAtIndex(newArray: picArray, index: index)

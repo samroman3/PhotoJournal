@@ -156,10 +156,12 @@ func showActionSheet(tag: Int) {
     }
 }
     let editAction = UIAlertAction.init(title: "Edit", style: .destructive) { (action) in
+        let pic = self.pictures[tag]
         
     }
     
 let cancelAction = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
+    optionsMenu.addAction(editAction)
     optionsMenu.addAction(shareAction)
     optionsMenu.addAction(deleteAction)
     optionsMenu.addAction(cancelAction)
