@@ -15,3 +15,8 @@ protocol PhotoDelegate: AnyObject {
     
 }
 
+protocol SaveDelegate: AnyObject {
+    func editPhoto()
+    func savePhoto()
+}
+

@@ -120,6 +120,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         cell.photoImag.image = UIImage(data: index.image!)
         cell.photoMenu.tag = indexPath.row
         cell.delegate = self as? PhotoDelegate
+        
         return cell
     }
     
@@ -157,6 +158,12 @@ func showActionSheet(tag: Int) {
 }
     let editAction = UIAlertAction.init(title: "Edit", style: .destructive) { (action) in
         let pic = self.pictures[tag]
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let newImageVC = (storyboard.instantiateViewController(identifier: "NewImageVC")) as! NewImageViewController
+        newImageVC.picture = pic
+        newImageVC.index = tag
+        newImageVC.modalPresentationStyle = .currentContext
+        self.present(newImageVC, animated: true)
         
     }
     

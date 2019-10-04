@@ -105,7 +105,7 @@
         <!--New Image View Controller-->
         <scene sceneID="98m-sj-ZRN">
             <objects>
-                <viewController id="uoO-4f-cAp" customClass="NewImageViewController" customModule="photoJournal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewImageVC" id="uoO-4f-cAp" customClass="NewImageViewController" customModule="photoJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qVK-5i-hxe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -16,6 +16,12 @@ class NewImageViewController: UIViewController {
     private var name: String?
     
     var photoLibraryAccess = false
+    
+    weak var delegate: SaveDelegate?
+    
+    var picture: Picture?
+    
+    var index: Int?
       
     private var imagePickerViewcontroller: UIImagePickerController!
     
@@ -43,23 +49,55 @@ class NewImageViewController: UIViewController {
     }
     
     @IBAction func saveAction(_ sender: UIButton) {
-        guard let image = newImage.image else { return }
-        let data = image.pngData()
-            let picture = Picture(createdAt: nil, image: data, name: name ?? "")
-            do {
-                DispatchQueue.global(qos: .utility).async {
-                try? PhotoPersistenceHelper.manager.save(newPhoto: picture)
-                  DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: nil)
-                  }
+        if self.picture == nil {
+            save()
+        } else {
+            edit()
             }
-    }
-    }
+        }
     
-    //TODO: Create a switch function in saveAction to determine whether post is being created from scratch or editing an existing post
+
+    
     
     
     //MARK: Private Methods and Lifecycle
+    
+    private func setUpEdit(){
+        if picture != nil {
+            newImage.image = UIImage(data: (picture?.image)!)
+            nameField.text = picture?.name
+            saveOutlet.isEnabled = true
+        }
+    }
+    
+    private func save(){
+        guard let image = newImage.image else { return }
+               let data = image.pngData()
+                   let picture = Picture(createdAt: nil, image: data, name: name ?? "")
+                   do {
+                       DispatchQueue.global(qos: .utility).async {
+                       try? PhotoPersistenceHelper.manager.save(newPhoto: picture)
+                         DispatchQueue.main.async {
+                           self.dismiss(animated: true, completion: nil)
+                         }
+                   }
+           }
+    }
+    
+    private func edit(){
+        guard let image = newImage.image else { return }
+               let data = image.pngData()
+                   let picture = Picture(createdAt: nil, image: data, name: name ?? "")
+                   do {
+                       DispatchQueue.global(qos: .utility).async {
+                        try? PhotoPersistenceHelper.manager.editPhoto(element: picture, index: self.index!)
+                         DispatchQueue.main.async {
+                           self.dismiss(animated: true, completion: nil)
+                         }
+                   }
+           }
+    }
+    
     
     private func setupImagePickerViewController() {
             imagePickerViewcontroller = UIImagePickerController()
@@ -71,6 +109,7 @@ class NewImageViewController: UIViewController {
     
     override func viewDidLoad() {
         setupImagePickerViewController()
+        setUpEdit()
         nameField.delegate = self
         super.viewDidLoad()
     }
