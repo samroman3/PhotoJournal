@@ -10,6 +10,8 @@ import UIKit
 
 class PhotoCollectionViewCell: UICollectionViewCell {
     
+    weak var delegate: PhotoDelegate?
+    
     @IBOutlet weak var photoImag: UIImageView!
     
     @IBOutlet weak var name: UILabel!
@@ -18,6 +20,10 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 
     
     @IBOutlet weak var photoMenu: UIButton!
+    
+    @IBAction func photoMenuAction(_ sender: UIButton) {
+         delegate?.showActionSheet(tag: sender.tag)
+    }
     
     
     

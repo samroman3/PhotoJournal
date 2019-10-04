@@ -102,8 +102,12 @@ extension NewImageViewController: UIImagePickerControllerDelegate, UINavigationC
 extension NewImageViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            guard textField.text != nil else { return false }
+        guard textField.text != nil else {
+            saveOutlet.isEnabled = false
+            return false
+        }
             name = textField.text
+            
             return true
         
     }

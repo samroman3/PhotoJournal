@@ -23,19 +23,6 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func menuButton(_ sender: UIButton) {
-        let alert = UIAlertController(title: "options", message: "make a selection", preferredStyle: .actionSheet)
-        let delete = UIAlertAction(title: "delete", style: .destructive) { (action) in
-            self.deleteObject(arr: self.pictures, index: sender.tag)
-            self.photoCollection.reloadData()
-            
-        }
-       
-        let cancel = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
-        alert.addAction(delete)
-        alert.addAction(cancel)
-        present(alert, animated: true, completion: nil)
-    }
     
     var pictures = [Picture]() {
         didSet {
@@ -131,7 +118,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         cell.layer.masksToBounds = true
         cell.name.text = index.name
         cell.photoImag.image = UIImage(data: index.image!)
-        
+        cell.photoMenu.tag = indexPath.row
+        cell.delegate = self as? PhotoDelegate
         return cell
     }
     
@@ -142,12 +130,45 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 370, height: 507)
+        return CGSize(width: 370, height: 416)
     }
     
 }
 
+extension ViewController: PhotoDelegate {
+func showActionSheet(tag: Int) {
+    let optionsMenu = UIAlertController.init(title: "Options", message: "Make Selection", preferredStyle: .actionSheet)
 
+    let shareAction = UIAlertAction.init(title: "Share", style: .default) { (action) in
+        let image = UIImage(data: self.pictures[tag].image!)
+    
+        let share = UIActivityViewController(activityItems: [image!], applicationActivities: [])
+        self.present(share, animated: true, completion: nil)
+    }
+
+ let deleteAction = UIAlertAction.init(title: "Delete", style: .destructive) { (_) in
+    let pic = self.pictures[tag]
+    print("deleting \(pic.name)")
+    do {
+        try PhotoPersistenceHelper.manager.delete(picArray: self.pictures, index: tag)
+    } catch {
+        return
+    }
+}
+    let editAction = UIAlertAction.init(title: "Edit", style: .destructive) { (action) in
+        
+    }
+    
+let cancelAction = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
+    optionsMenu.addAction(shareAction)
+    optionsMenu.addAction(deleteAction)
+    optionsMenu.addAction(cancelAction)
+ present(optionsMenu,animated: true,completion: nil)
+
+
+}
+
+}
 
     
 

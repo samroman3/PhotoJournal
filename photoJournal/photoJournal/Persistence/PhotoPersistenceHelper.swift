@@ -22,6 +22,8 @@ struct PhotoPersistenceHelper {
         return try persistenceHelper.getObjects()
     }
     
+    
+    //TODO: find way to delete picture based on sender tag in collectionview cell
     func delete(picArray: [Picture], index: Int) throws {
         return try persistenceHelper.deleteAtIndex(newArray: picArray, index: index)
         
