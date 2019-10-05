@@ -25,6 +25,10 @@ class NewImageViewController: UIViewController {
       
     private var imagePickerViewcontroller: UIImagePickerController!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     @IBOutlet weak var newImage: UIImageView!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var saveOutlet: UIButton!
@@ -110,6 +114,7 @@ class NewImageViewController: UIViewController {
     override func viewDidLoad() {
         setupImagePickerViewController()
         setUpEdit()
+        setNeedsStatusBarAppearanceUpdate()
         nameField.delegate = self
         super.viewDidLoad()
     }

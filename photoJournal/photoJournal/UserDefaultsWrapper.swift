@@ -25,7 +25,7 @@ class UserDefaultsWrapper {
     // MARK: - setters
     
     func storeMode(darkMode: Bool) {
-        UserDefaults.standard.set(darkMode, forKey: "DarkMode") 
+        UserDefaults.standard.set(darkMode, forKey: "DarkMode")
     }
     
 

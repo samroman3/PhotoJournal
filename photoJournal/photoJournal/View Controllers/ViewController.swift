@@ -30,6 +30,9 @@ var pictures = [Picture]() {
 }
 }
 
+override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+}
 
 
 
@@ -88,6 +91,7 @@ override func viewDidLoad() {
     photoCollection.dataSource = self
     loadData()
     checkPhotoLibraryAccess()
+    setNeedsStatusBarAppearanceUpdate()
     super.viewDidLoad()
 
 }
@@ -95,6 +99,7 @@ override func viewDidLoad() {
 override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     loadData()
+    setNeedsStatusBarAppearanceUpdate()
 
 }
 
@@ -124,8 +129,6 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
     return cell
 }
 
-
-
 func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1
 }
@@ -136,6 +139,9 @@ func collectionView(_ collectionView: UICollectionView, layout collectionViewLay
 
 }
 
+
+
+//MARK: ActionSheet Delegate Extension
 extension ViewController: PhotoDelegate {
 func showActionSheet(tag: Int) {
 let optionsMenu = UIAlertController.init(title: "Options", message: "Make Selection", preferredStyle: .actionSheet)
