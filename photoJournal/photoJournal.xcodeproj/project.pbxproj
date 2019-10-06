@@ -119,7 +119,6 @@
 				3AB168FE2343031100D268B9 /* Models */,
 				3AB168FD234302F700D268B9 /* Persistence */,
 				3A4009132341191C0079BD63 /* Main.storyboard */,
-				3AB169462347E73300D268B9 /* UserDefaultsWrapper.swift */,
 				3A4009162341191E0079BD63 /* Assets.xcassets */,
 				3A4009182341191E0079BD63 /* LaunchScreen.storyboard */,
 				3A40091B2341191E0079BD63 /* Info.plist */,
@@ -158,6 +157,7 @@
 		3AB168FD234302F700D268B9 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				3AB169462347E73300D268B9 /* UserDefaultsWrapper.swift */,
 				3AB168F9234302EB00D268B9 /* PersistenceHelper.swift */,
 				3AB168FB234302F000D268B9 /* PhotoPersistenceHelper.swift */,
 				3AB169442347C35C00D268B9 /* PhotoProtocols.swift */,

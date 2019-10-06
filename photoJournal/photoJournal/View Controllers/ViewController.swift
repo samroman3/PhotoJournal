@@ -163,7 +163,7 @@ do {
     return
 }
 }
-let editAction = UIAlertAction.init(title: "Edit", style: .destructive) { (action) in
+let editAction = UIAlertAction.init(title: "Edit", style: .default) { (action) in
     let pic = self.pictures[tag]
     let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
     let newImageVC = (storyboard.instantiateViewController(identifier: "NewImageVC")) as! NewImageViewController

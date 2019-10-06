@@ -22,8 +22,6 @@ struct PhotoPersistenceHelper {
         return try persistenceHelper.getObjects()
     }
     
-    
-    
     func editPhoto(element: Picture, index: Int) throws {
         return try persistenceHelper.editAtIndex(editedElement: element, index: index)
     }
