@@ -22,6 +22,7 @@
 		3AB168FC234302F000D268B9 /* PhotoPersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB168FB234302F000D268B9 /* PhotoPersistenceHelper.swift */; };
 		3AB169452347C35C00D268B9 /* PhotoProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB169442347C35C00D268B9 /* PhotoProtocols.swift */; };
 		3AB169472347E73300D268B9 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB169462347E73300D268B9 /* UserDefaultsWrapper.swift */; };
+		3AB1694B234A6C6A00D268B9 /* PhotoSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1694A234A6C6A00D268B9 /* PhotoSettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		3AB168FB234302F000D268B9 /* PhotoPersistenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPersistenceHelper.swift; sourceTree = "<group>"; };
 		3AB169442347C35C00D268B9 /* PhotoProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoProtocols.swift; sourceTree = "<group>"; };
 		3AB169462347E73300D268B9 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		3AB1694A234A6C6A00D268B9 /* PhotoSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +118,7 @@
 				3A40090D2341191C0079BD63 /* AppDelegate.swift */,
 				3A40090F2341191C0079BD63 /* SceneDelegate.swift */,
 				3AB168F62342E60400D268B9 /* View Controllers */,
-				3AB168FE2343031100D268B9 /* Models */,
+				3AB168FE2343031100D268B9 /* Models & Protocols */,
 				3AB168FD234302F700D268B9 /* Persistence */,
 				3A4009132341191C0079BD63 /* Main.storyboard */,
 				3A4009162341191E0079BD63 /* Assets.xcassets */,
@@ -150,6 +152,7 @@
 				3A4009112341191C0079BD63 /* ViewController.swift */,
 				3AB168F72342E6F800D268B9 /* NewImageViewController.swift */,
 				3A40093D23411B530079BD63 /* PhotoCollectionViewCell.swift */,
+				3AB1694A234A6C6A00D268B9 /* PhotoSettingsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -160,17 +163,17 @@
 				3AB169462347E73300D268B9 /* UserDefaultsWrapper.swift */,
 				3AB168F9234302EB00D268B9 /* PersistenceHelper.swift */,
 				3AB168FB234302F000D268B9 /* PhotoPersistenceHelper.swift */,
-				3AB169442347C35C00D268B9 /* PhotoProtocols.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
 		};
-		3AB168FE2343031100D268B9 /* Models */ = {
+		3AB168FE2343031100D268B9 /* Models & Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				3A40093F234239E70079BD63 /* Picture.swift */,
+				3AB169442347C35C00D268B9 /* PhotoProtocols.swift */,
 			);
-			path = Models;
+			path = "Models & Protocols";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB1694B234A6C6A00D268B9 /* PhotoSettingsViewController.swift in Sources */,
 				3A4009122341191C0079BD63 /* ViewController.swift in Sources */,
 				3A400940234239E70079BD63 /* Picture.swift in Sources */,
 				3AB168F82342E6F800D268B9 /* NewImageViewController.swift in Sources */,
