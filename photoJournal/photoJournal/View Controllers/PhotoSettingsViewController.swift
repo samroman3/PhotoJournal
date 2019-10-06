@@ -18,6 +18,9 @@ class PhotoSettingsViewController: UIViewController {
     @IBAction func darkModeAction(_ sender: UISwitch) {
     }
     
+    @IBAction func backButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil )
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
