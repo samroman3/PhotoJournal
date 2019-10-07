@@ -17,7 +17,7 @@ class NewImageViewController: UIViewController {
     
     var photoLibraryAccess = false
     
-    weak var delegate: SaveDelegate?
+//    weak var delegate: SaveDelegate?
     
     var picture: Picture?
     

@@ -22,7 +22,11 @@ var photoLibraryAccess = false
 @IBAction func addPhotoAction(_ sender: UIButton) {
     
 }
+    
+    var BGColor = UIColor(red: 218, green: 222, blue: 218, alpha: 1)
+    var textColor: UIColor?
 
+var darkMode = UserDefaultsWrapper.wrapper.getDarkModeSetting()
 
 var pictures = [Picture]() {
     didSet {
@@ -91,6 +95,7 @@ override func viewDidLoad() {
     photoCollection.dataSource = self
     loadData()
     checkPhotoLibraryAccess()
+    setMode()
     setNeedsStatusBarAppearanceUpdate()
     super.viewDidLoad()
 
@@ -99,6 +104,7 @@ override func viewDidLoad() {
 override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     loadData()
+    setMode()
     setNeedsStatusBarAppearanceUpdate()
 
 }
@@ -122,9 +128,12 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
     cell.layer.cornerRadius = 20
     cell.layer.masksToBounds = true
     cell.name.text = index.name
+    cell.name.textColor = textColor
     cell.photoImag.image = UIImage(data: index.image!)
     cell.photoMenu.tag = indexPath.row
     cell.delegate = self as? PhotoDelegate
+    cell.backgroundColor = BGColor
+   
     
     return cell
 }
@@ -187,5 +196,29 @@ present(optionsMenu,animated: true,completion: nil)
 
 }
 
+
+
+//MARK: UI Design Extension
+
+extension ViewController {
+    
+    private func setMode(){
+        let mode = UserDefaultsWrapper.wrapper.getDarkModeSetting()
+        switch mode{
+        case true:
+            self.photoCollection.backgroundColor =  UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)
+        self.BGColor = UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)
+        self.textColor = UIColor.black
+        case false:
+        self.photoCollection.backgroundColor = UIColor(red: 218/255, green: 222/255, blue: 218/255, alpha: 1)
+        self.BGColor = UIColor.white
+        self.textColor = UIColor.black
+        default:
+        self.photoCollection.backgroundColor = UIColor(red: 218/255, green: 222/255, blue: 218/255, alpha: 1)
+        self.BGColor = UIColor.white
+        self.textColor = UIColor.black
+        }
+    }
+}
 
 

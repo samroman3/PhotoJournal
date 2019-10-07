@@ -20,6 +20,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 
     
     @IBOutlet weak var photoMenu: UIButton!
+
     
     @IBAction func photoMenuAction(_ sender: UIButton) {
          delegate?.showActionSheet(tag: sender.tag)

@@ -25,7 +25,7 @@ class PhotoSettingsViewController: UIViewController {
     
     
     private func setMode(){
-        darkModeOutlet.isOn = UserDefaultsWrapper.wrapper.getDarkModeSetting() ?? true
+        darkModeOutlet.isOn = UserDefaultsWrapper.wrapper.getDarkModeSetting() ?? false
     }
     
     override func viewDidLoad() {

@@ -20,6 +20,16 @@ class UserDefaultsWrapper {
     func getDarkModeSetting() -> Bool? {
         return UserDefaults.standard.value(forKey: "DarkMode") as? Bool
     }
+    
+    func getLightText() -> UIColor? {
+        return UIColor.darkGray
+    }
+    
+    func getDarkText() -> UIColor? {
+        return UIColor.white
+    }
+    
+//    func getVerticalScroll() -> ScrollDirection
 
     
     // MARK: - setters
@@ -28,8 +38,17 @@ class UserDefaultsWrapper {
         UserDefaults.standard.set(darkMode, forKey: "DarkMode")
     }
     
+    func storeLightTextColor(){
+        UserDefaults.standard.set(UIColor.black, forKey: "LightText")
+    }
+
 
     // MARK: - private keyNames
     
    
+}
+
+enum ScrollDirection {
+    case vertical
+    case horizontal
 }
