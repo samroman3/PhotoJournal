@@ -18,6 +18,7 @@ class PhotoSettingsViewController: UIViewController {
     @IBOutlet weak var scrollOutlet: UISwitch!
     
     @IBAction func darkModeAction(_ sender: UISwitch) {
+        setViews()
         UserDefaultsWrapper.wrapper.storeMode(darkMode: sender.isOn)
     }
     
@@ -36,10 +37,25 @@ class PhotoSettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         setMode()
+        setViews()
         super.viewDidLoad()
 
     }
     
+    
+    func setViews(){
+        switch darkModeOutlet.isOn {
+        case true:
+            settingsLabel.textColor = UIColor(red: 218/255, green: 222/255, blue: 218/255, alpha: 1)
+            self.view.backgroundColor = UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)
+        case false:
+            settingsLabel.textColor = UIColor.black
+             self.view.backgroundColor = UIColor(red: 218/255, green: 222/255, blue: 218/255, alpha: 1)
+        }
+    }
+    
 
+    
 
 }
+

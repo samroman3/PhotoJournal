@@ -22,34 +22,34 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.84714651110000005" green="0.87084645029999996" blue="0.85490077730000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wtG-dI-mYj">
-                                    <size key="itemSize" width="413" height="326"/>
+                                    <size key="itemSize" width="370" height="390"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="1UP-qf-AVh" customClass="PhotoCollectionViewCell" customModule="photoJournal" customModuleProvider="target">
-                                        <rect key="frame" x="0.66666666666666663" y="0.0" width="413" height="326"/>
+                                        <rect key="frame" x="22" y="0.0" width="370" height="390"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sbz-Bi-lSb">
-                                            <rect key="frame" x="0.0" y="0.0" width="413" height="326"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="370" height="390"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cw4-nd-Vk5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="413" height="249"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="370" height="285"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" red="0.70200639963150024" green="0.70986199378967285" blue="0.7058824896812439" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b10-Hb-SNM">
-                                                    <rect key="frame" x="8" y="251" width="405" height="49"/>
+                                                    <rect key="frame" x="8" y="293" width="354" height="49"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="26"/>
                                                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Us-sf-lia">
-                                                    <rect key="frame" x="353" y="270" width="30" height="48"/>
+                                                    <rect key="frame" x="322" y="323" width="30" height="48"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <state key="normal" title="...">
@@ -60,7 +60,7 @@
                                                     </connections>
                                                 </button>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="06-13-1995" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyh-9q-LGs">
-                                                    <rect key="frame" x="339" y="254" width="58" height="23"/>
+                                                    <rect key="frame" x="8" y="359" width="58" height="23"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -71,7 +71,7 @@
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <size key="customSize" width="413" height="326"/>
+                                        <size key="customSize" width="370" height="390"/>
                                         <connections>
                                             <outlet property="date" destination="Zyh-9q-LGs" id="vzE-gS-lsI"/>
                                             <outlet property="name" destination="b10-Hb-SNM" id="UaS-ET-tsZ"/>
@@ -147,7 +147,7 @@
                                 <rect key="frame" x="189" y="808" width="37" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" backgroundImage="arrow.left.circle" catalog="system"/>
                                 <connections>
                                     <action selector="backButton:" destination="Kg2-q1-n19" eventType="touchUpInside" id="1cW-8F-3l9"/>
@@ -251,7 +251,7 @@
                                         <rect key="frame" x="338" y="16" width="38" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" red="0.99946194889999995" green="0.99696093799999996" blue="0.94509106870000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="square.and.arrow.down" catalog="system"/>
                                         <connections>
                                             <action selector="saveAction:" destination="uoO-4f-cAp" eventType="touchUpInside" id="SLv-mP-Vjt"/>
@@ -261,7 +261,7 @@
                                         <rect key="frame" x="34" y="20.5" width="37" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" red="0.99946194889999995" green="0.99696093799999996" blue="0.94509106870000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="arrow.left.circle" catalog="system"/>
                                         <connections>
                                             <action selector="cancelAction:" destination="uoO-4f-cAp" eventType="touchUpInside" id="9mn-Na-dP0"/>
@@ -271,7 +271,7 @@
                                         <rect key="frame" x="184" y="21.333333333333144" width="46" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" red="1" green="0.99487199250000002" blue="0.94895281440000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="folder.badge.plus" catalog="system"/>
                                         <connections>
                                             <action selector="folderButton:" destination="uoO-4f-cAp" eventType="touchUpInside" id="RZr-HP-ZTz"/>

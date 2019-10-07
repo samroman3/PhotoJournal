@@ -143,7 +143,7 @@ func numberOfSections(in collectionView: UICollectionView) -> Int {
 }
 
 func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: 413, height: 326)
+    return CGSize(width: 370, height: 390)
 }
 
 }
@@ -209,6 +209,8 @@ extension ViewController {
             self.photoCollection.backgroundColor =  UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)
         self.BGColor = UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)
         self.textColor = UIColor.black
+            
+            
         case false:
         self.photoCollection.backgroundColor = UIColor(red: 218/255, green: 222/255, blue: 218/255, alpha: 1)
         self.BGColor = UIColor.white
