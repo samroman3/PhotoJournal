@@ -15,10 +15,15 @@ class PhotoSettingsViewController: UIViewController {
     
     @IBOutlet weak var darkModeOutlet: UISwitch!
     
+    @IBOutlet weak var scrollOutlet: UISwitch!
+    
     @IBAction func darkModeAction(_ sender: UISwitch) {
         UserDefaultsWrapper.wrapper.storeMode(darkMode: sender.isOn)
     }
     
+    @IBAction func scrollAction(_ sender: UISwitch) {
+        UserDefaultsWrapper.wrapper.storeScroll(scrollDirection: sender.isOn)
+    }
     @IBAction func backButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil )
     }
@@ -26,24 +31,15 @@ class PhotoSettingsViewController: UIViewController {
     
     private func setMode(){
         darkModeOutlet.isOn = UserDefaultsWrapper.wrapper.getDarkModeSetting() ?? false
+        scrollOutlet.isOn = UserDefaultsWrapper.wrapper.getScrollDirection() ?? false
     }
     
     override func viewDidLoad() {
         setMode()
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

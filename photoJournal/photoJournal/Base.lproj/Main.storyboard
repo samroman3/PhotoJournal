@@ -17,46 +17,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZDM-hO-0Kb">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="787"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="743"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.84714651110000005" green="0.87084645029999996" blue="0.85490077730000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wtG-dI-mYj">
-                                    <size key="itemSize" width="353" height="321"/>
+                                    <size key="itemSize" width="413" height="326"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="1UP-qf-AVh" customClass="PhotoCollectionViewCell" customModule="photoJournal" customModuleProvider="target">
-                                        <rect key="frame" x="30.666666666666668" y="0.0" width="353" height="321"/>
+                                        <rect key="frame" x="0.66666666666666663" y="0.0" width="413" height="326"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sbz-Bi-lSb">
-                                            <rect key="frame" x="0.0" y="0.0" width="353" height="321"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="413" height="326"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cw4-nd-Vk5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="232"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="413" height="249"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" red="0.70200639963150024" green="0.70986199378967285" blue="0.7058824896812439" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b10-Hb-SNM">
-                                                    <rect key="frame" x="8" y="251" width="309" height="49"/>
+                                                    <rect key="frame" x="8" y="251" width="405" height="49"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="26"/>
                                                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="06-13-1995" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyh-9q-LGs">
-                                                    <rect key="frame" x="287" y="256" width="58" height="23"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Us-sf-lia">
-                                                    <rect key="frame" x="315" y="257" width="30" height="48"/>
+                                                    <rect key="frame" x="353" y="270" width="30" height="48"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <state key="normal" title="...">
@@ -66,12 +59,19 @@
                                                         <action selector="photoMenuAction:" destination="1UP-qf-AVh" eventType="touchUpInside" id="eu2-3q-HpT"/>
                                                     </connections>
                                                 </button>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="06-13-1995" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyh-9q-LGs">
+                                                    <rect key="frame" x="339" y="254" width="58" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <size key="customSize" width="353" height="321"/>
+                                        <size key="customSize" width="413" height="326"/>
                                         <connections>
                                             <outlet property="date" destination="Zyh-9q-LGs" id="vzE-gS-lsI"/>
                                             <outlet property="name" destination="b10-Hb-SNM" id="UaS-ET-tsZ"/>
@@ -166,6 +166,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="darkModeAction:" destination="Kg2-q1-n19" eventType="valueChanged" id="Cw3-03-eup"/>
+                                    <action selector="scrollAction:" destination="Kg2-q1-n19" eventType="valueChanged" id="uoY-fh-XF7"/>
                                 </connections>
                             </switch>
                         </subviews>
@@ -175,6 +176,7 @@
                     <connections>
                         <outlet property="darkModeLabel" destination="45h-Qj-f8M" id="9hN-fT-oDP"/>
                         <outlet property="darkModeOutlet" destination="f2i-Rs-LOY" id="5Rr-JU-Fbo"/>
+                        <outlet property="scrollOutlet" destination="1Bc-7G-wUo" id="qcJ-yU-9iS"/>
                         <outlet property="settingsLabel" destination="Jj3-YM-Lod" id="Dck-ZC-fVr"/>
                     </connections>
                 </viewController>

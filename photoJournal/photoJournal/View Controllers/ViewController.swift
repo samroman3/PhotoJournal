@@ -13,8 +13,6 @@ class ViewController: UIViewController {
 
 //MARK: Outlets & Variables
 
-var photoLibraryAccess = false
-
 @IBOutlet weak var photoCollection: UICollectionView!
 
 @IBOutlet weak var addPhotoButton: UIButton!
@@ -23,11 +21,11 @@ var photoLibraryAccess = false
     
 }
     
-    var BGColor = UIColor(red: 218, green: 222, blue: 218, alpha: 1)
-    var textColor: UIColor?
-
-var darkMode = UserDefaultsWrapper.wrapper.getDarkModeSetting()
-
+var BGColor = UIColor(red: 218, green: 222, blue: 218, alpha: 1)
+var textColor: UIColor?
+var photoLibraryAccess = false
+var scrollDirection = UserDefaultsWrapper.wrapper.getScrollDirection() ?? false
+    
 var pictures = [Picture]() {
     didSet {
         photoCollection.reloadData()
@@ -97,6 +95,7 @@ override func viewDidLoad() {
     checkPhotoLibraryAccess()
     setMode()
     setNeedsStatusBarAppearanceUpdate()
+    setScroll()
     super.viewDidLoad()
 
 }
@@ -105,6 +104,7 @@ override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     loadData()
     setMode()
+    setScroll()
     setNeedsStatusBarAppearanceUpdate()
 
 }
@@ -143,7 +143,7 @@ func numberOfSections(in collectionView: UICollectionView) -> Int {
 }
 
 func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: 353, height: 321)
+    return CGSize(width: 413, height: 326)
 }
 
 }
@@ -163,7 +163,7 @@ let shareAction = UIAlertAction.init(title: "Share", style: .default) { (action)
     self.present(share, animated: true, completion: nil)
 }
 
-let deleteAction = UIAlertAction.init(title: "Delete", style: .destructive) { (_) in
+let deleteAction = UIAlertAction.init(title: "Delete", style: .destructive) { (action) in
 let pic = self.pictures[tag]
 print("deleting \(pic.name)")
 do {
@@ -219,6 +219,19 @@ extension ViewController {
         self.textColor = UIColor.black
         }
     }
+    
+    private func setScroll(){
+        let layout = photoCollection.collectionViewLayout as? UICollectionViewFlowLayout
+        switch scrollDirection{
+        case true:
+            layout!.scrollDirection = .horizontal
+            photoCollection.reloadData()
+        case false:
+            layout!.scrollDirection = .vertical
+            photoCollection.reloadData()
+    }
 }
+}
+
 
 
