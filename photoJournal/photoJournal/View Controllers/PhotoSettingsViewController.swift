@@ -16,13 +16,20 @@ class PhotoSettingsViewController: UIViewController {
     @IBOutlet weak var darkModeOutlet: UISwitch!
     
     @IBAction func darkModeAction(_ sender: UISwitch) {
+        UserDefaultsWrapper.wrapper.storeMode(darkMode: sender.isOn)
     }
     
     @IBAction func backButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil )
     }
     
+    
+    private func setMode(){
+        darkModeOutlet.isOn = UserDefaultsWrapper.wrapper.getDarkModeSetting() ?? true
+    }
+    
     override func viewDidLoad() {
+        setMode()
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

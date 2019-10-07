@@ -134,7 +134,7 @@ func numberOfSections(in collectionView: UICollectionView) -> Int {
 }
 
 func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: 370, height: 416)
+    return CGSize(width: 353, height: 321)
 }
 
 }
@@ -142,6 +142,7 @@ func collectionView(_ collectionView: UICollectionView, layout collectionViewLay
 
 
 //MARK: ActionSheet Delegate Extension
+
 extension ViewController: PhotoDelegate {
 func showActionSheet(tag: Int) {
 let optionsMenu = UIAlertController.init(title: "Options", message: "Make Selection", preferredStyle: .actionSheet)

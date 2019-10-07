@@ -151,8 +151,8 @@
 			children = (
 				3A4009112341191C0079BD63 /* ViewController.swift */,
 				3AB168F72342E6F800D268B9 /* NewImageViewController.swift */,
-				3A40093D23411B530079BD63 /* PhotoCollectionViewCell.swift */,
 				3AB1694A234A6C6A00D268B9 /* PhotoSettingsViewController.swift */,
+				3A40093D23411B530079BD63 /* PhotoCollectionViewCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
