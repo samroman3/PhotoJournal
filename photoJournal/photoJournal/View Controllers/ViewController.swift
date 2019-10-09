@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 var BGColor = UIColor(red: 218, green: 222, blue: 218, alpha: 1)
 var textColor: UIColor?
 var photoLibraryAccess = false
-var scrollDirection = UserDefaultsWrapper.wrapper.getScrollDirection() ?? false
+//var scrollDirection = UserDefaultsWrapper.wrapper.getScrollDirection() ?? false
     
 var pictures = [Picture]() {
     didSet {
@@ -92,10 +92,10 @@ override func viewDidLoad() {
     photoCollection.delegate = self
     photoCollection.dataSource = self
     loadData()
+    setScroll()
     checkPhotoLibraryAccess()
     setMode()
     setNeedsStatusBarAppearanceUpdate()
-    setScroll()
     super.viewDidLoad()
 
 }
@@ -103,8 +103,8 @@ override func viewDidLoad() {
 override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     loadData()
-    setMode()
     setScroll()
+    setMode()
     setNeedsStatusBarAppearanceUpdate()
 
 }
@@ -224,13 +224,12 @@ extension ViewController {
     
     private func setScroll(){
         let layout = photoCollection.collectionViewLayout as? UICollectionViewFlowLayout
-        switch scrollDirection{
+        let scroll = UserDefaultsWrapper.wrapper.getScrollDirection()!
+        switch scroll{
         case true:
             layout!.scrollDirection = .horizontal
-            photoCollection.reloadData()
         case false:
             layout!.scrollDirection = .vertical
-            photoCollection.reloadData()
     }
 }
 }
