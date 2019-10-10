@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     
 }
     
+
 var BGColor = UIColor(red: 218, green: 222, blue: 218, alpha: 1)
 var textColor: UIColor?
 var photoLibraryAccess = false
@@ -224,7 +225,7 @@ extension ViewController {
     
     private func setScroll(){
         let layout = photoCollection.collectionViewLayout as? UICollectionViewFlowLayout
-        let scroll = UserDefaultsWrapper.wrapper.getScrollDirection()!
+        let scroll = UserDefaultsWrapper.wrapper.getScrollDirection() ?? false
         switch scroll{
         case true:
             layout!.scrollDirection = .horizontal

@@ -33,8 +33,7 @@ class PhotoSettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         setViews()
-        scrollOutlet.isOn = UserDefaultsWrapper.wrapper.getScrollDirection() ?? false
-        darkModeOutlet.isOn = UserDefaultsWrapper.wrapper.getDarkModeSetting() ?? false
+
         super.viewDidLoad()
 
     }
