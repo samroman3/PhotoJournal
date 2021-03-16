@@ -60,6 +60,11 @@ private func checkPhotoLibraryAccess() {
                 print("not determined")
             case .restricted:
                 print("restricted")
+            case .limited:
+                print("limited access")
+                //ask permission
+            default: break
+                
             }
         })
         
@@ -69,6 +74,10 @@ private func checkPhotoLibraryAccess() {
         self.present(alertVC, animated: true, completion: nil)
     case .restricted:
         print("restricted")
+    case .limited:
+        print("limited access")
+    @unknown default:
+        break
     }
 }
 
